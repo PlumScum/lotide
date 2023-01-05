@@ -1,8 +1,3 @@
-// const assertEqual = require('../assertEqual');
-// const eqArrays = require('../eqArrays');
-
-// assertEqual(eqArrays(eqArrays([1, 2, 3], [1, 2, 3],)), true);
-
 const assert = require('chai').assert;
 const eqArrays = require('../eqArrays');
 
