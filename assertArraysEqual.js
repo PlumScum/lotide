@@ -1,6 +1,5 @@
 const eqArrays = require('./eqArrays');
 
-// Explain the function here (can include examples for padding)
 const assertArraysEqual = function(array1,array2) {
   // If a parameter is empty, return a message and exit the function
   if (!array1 || !array2) {
