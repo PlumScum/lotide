@@ -1,4 +1,4 @@
-// Explain the function here (can include examples for padding)
+// Explain the function here
 const assertEqual = function(actual, expected) {
   // If a parameter is empty, return a message and exit the function
   if (!actual || !expected) {
