@@ -1,10 +1,21 @@
-const eqArrays = require('./eqArrays');
 const eqObjects = require('./eqObjects');
 
+// Using .inspect to easily turn an object into a string
+const inspect = require('util').inspect;
+
 const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect;
+  // If a parameter is empty, return a message and exit the function
+  if (!actual || !expected) {
+    console.log('Please provide an actual and expected parameter. Example: assertObjectsEqual(actual, expected)');
+    return;
+  }
+
+  // If the actual and expected objects are/are not equal, output a message
   const message = eqObjects(actual,expected) ? `✅✅✅ Assertion Passed [${inspect(actual)}] === [${inspect(expected)}]` : `🛑🛑🛑 Assertion Failed [${inspect(actual)}] !== [${inspect(expected)}]`;
   console.log(message);
 };
 
-assertObjectsEqual({ a: '1', b: 2 }, { b: 2, a: '1' }, true);
+// assertObjectsEqual("Row, row, row your boat", "Row, row, row your boat");
+
+
+module.exports = assertObjectsEqual;
