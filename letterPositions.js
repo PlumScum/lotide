@@ -1,31 +1,17 @@
-const eqArrays = require("./eqArrays");
-
-
-const assertArraysEqual = function(array1, array2, assertArg) {
-  if (eqArrays(array1, array2) === assertArg) {
-    console.log(`✔️✔️✔️ Assertion Passed, ${array1} and ${array2} === ${assertArg}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed, ${array1} and ${array2} !== ${assertArg}`);
-  }
-};
-
-
-
+// This function takes in a string and returns each letter and a list of index positions for each letter.
 const letterPositions = function(sentence) {
   const results = {};
   for (let i = 0; i < sentence.length; i++) {
+    // If string is not empty
     if (sentence[i] !== " ") {
-      if (results[sentence[i]]) {
+      if (results[sentence[i]]) { // if letter exists, push the index to it.
         results[sentence[i]].push(i);
       } else {
-        results[sentence[i]] = [i];
+        results[sentence[i]] = [i]; // otherwise, create and store the index
       }
     }
   }
   return results;
 };
-
-
-console.log(letterPositions("lighthouse in the house"));
 
 module.exports = letterPositions;
