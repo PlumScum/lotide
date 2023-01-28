@@ -1,19 +1,16 @@
-// Explain the function here
+// This function takes in two paremeters and compares them with the second parameter being the expected result.
 const assertEqual = function(actual, expected) {
   // If a parameter is empty, return a message and exit the function
   if (!actual || !expected) {
-    console.log('The parameter is empty. Please input parameters. Example: (actual, expected)');
-    return;
+    return "Paremeter is empty";
   }
 
-  // If the actual and expected values are/are not the same, log a message.
+  // If actual is not expected fail the assertion, otherwise pass.
   if (actual !== expected) {
     console.log(`🛑🛑🛑 Assertion Failed, ${actual} !== ${expected}`);
   } else {
     console.log(`✔️✔️✔️ Assertion Passed, ${actual} === ${expected}`);
   }
 };
-
-
 
 module.exports = assertEqual;
