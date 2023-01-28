@@ -1,26 +1,23 @@
+// This function takes in parameters and counts only the items that match the second paremeter.
 const countOnly = function(allItems, itemsToCount) {
   // If a parameter is empty, return a message and exit the function
   if (!allItems || !itemsToCount) {
-    console.log("Please enter a valid input. Example: (array of strings, what to count)");
-    return;
+    return "A parameter is missing";
   }
 
-
-  
   const results = {};
 
-  // Loop through each item in the array. I'm using the for loop because it's what I've learned at the given moment.
+  // Look through all items and count for each item in the itemsToCount parameter.
   for (const item of allItems) {
     if (itemsToCount[item]) {
-      if (results[item]) {
-        results[item] += 1; //If key exists, increment count by 1
-      } else {
-        results[item] = 1; //If key does not exist  yet, create key
+      if (results[item]) { // If the item exists in our results, increment by one
+        results[item] += 1;
+      } else { // else create the item and set it to 1
+        results[item] = 1;
       }
     }
   }
   return results;
 };
-
 
 module.exports = countOnly;
