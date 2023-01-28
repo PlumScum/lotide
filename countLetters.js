@@ -1,25 +1,20 @@
+// This function takes in a string and returns an object with a count of each letter.
 const countLetters = function(sentence) {
   // If a parameter is empty, return a message and exit the function
   if (!sentence) {
-    console.log("Please enter a sentence");
-    return;
+    return "Parameter is missing";
   }
 
-  //Declare a object and loop through the sentence character by character, saving each character and returning a corresponding count of characters
   let sentenceObject = {};
   for (const character of sentence) {
-    if (sentenceObject[character]) {
-      sentenceObject[character] += 1; //If key exists, increment count by 1
-    } else {
-      sentenceObject[character] = 1; //If key does not exist  yet, create key
+    if (sentenceObject[character]) { // If the letter exists in the object, increment by 1
+      sentenceObject[character] += 1;
+    } else { // else create the letter and give it a value of 1
+      sentenceObject[character] = 1;
     }
   }
-  delete sentenceObject[" "]; //Remove spaces from object
+  delete sentenceObject[" "]; // Delete spaces afterwards for efficiency.
   return sentenceObject;
 };
-
-
-
-// console.log(countLetters("Let our house light the way!"));
 
 module.exports = countLetters;
