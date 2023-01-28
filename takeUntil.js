@@ -1,16 +1,22 @@
+// This function takes in an array and uses a callback to build and return a result
 const takeUntil = function(array, callback) {
-  const map1 = array.map(callback);
-  let trueLocation = map1.indexOf(true);
-  array.splice(trueLocation, array.length);
-  return array;
+  if (array === null || callback === null) {
+    console.log("A parameter is empty");
+    return;
+  }
+
+  let result = [];
+
+  // Loop through our array and callback to build our returned result
+  for (let i = 0; i < array.length; i++) {
+    if (!callback(array[i])) {
+      result.push(array[i]);
+    } else {
+      break;
+    }
+  }
+
+  return result;
 };
 
-// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-// const results1 = takeUntil(data1, x => x < 0);
-// console.log(results1);
-
-
-// const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-// const results2 = takeUntil(data2, x => x === ',');
-// console.log(results2);
-
+module.exports = takeUntil;
