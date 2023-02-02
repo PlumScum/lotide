@@ -5,20 +5,20 @@ const flatten = function(array) {
     return;
   }
 
-  const flatarray = [];
+  const flatArray = [];
 
 
   for (arr of array) {
     if (Array.isArray(arr)) { // We loop through, if it finds an array we loop and push it to the flat array
-      for (nestedarr of arr) {
-        flatarray.push(nestedarr);
+      for (nestedArr of arr) {
+        flatArray.push(nestedArr);
       }
     } else { // Otherwise, we push the value to the flat array
-      flatarray.push(arr);
+      flatArray.push(arr);
     }
   }
 
-  return flatarray;
+  return flatArray;
 };
 
 
