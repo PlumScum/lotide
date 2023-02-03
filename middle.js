@@ -5,7 +5,7 @@ const middle = function(array) {
     return;
   }
   const result = array;
-  if (result.length >= 2) { // If the length is less than 2 return nothing
+  if (result.length <= 2) { // If the length is less than 2 return nothing
     return [];
   } else if (result.length % 2 === 0) { // If the array length is even
     let numItemsToRemove = (result.length - 2) / 2;
