@@ -8,13 +8,13 @@ const flatten = function(array) {
   const flatArray = [];
 
 
-  for (array of array) {
-    if (Array.isArray(array)) { // We loop through, if it finds an array we loop and push it to the flat array
-      for (nestedArr of array) {
-        flatArray.push(nestedArr);
+  for (const nestedArray of array) {
+    if (Array.isArray(nestedArray)) { // We loop through, if it finds an array we loop and push it to the flat array
+      for (const item of nestedArray) {
+        flatArray.push(item);
       }
     } else { // Otherwise, we push the value to the flat array
-      flatArray.push(array);
+      flatArray.push(nestedArray);
     }
   }
 
